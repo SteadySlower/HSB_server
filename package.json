@@ -1,0 +1,24 @@
+{
+  "name": "hsb_server",
+  "version": "1.0.0",
+  "description": "This is the server for iOS application HSB",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SteadySlower/HSB_server.git"
+  },
+  "author": "JW Moon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SteadySlower/HSB_server/issues"
+  },
+  "homepage": "https://github.com/SteadySlower/HSB_server#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mysql2": "^2.3.3",
+    "pm2": "^5.1.2"
+  }
+}
