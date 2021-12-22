@@ -3,7 +3,11 @@ const controller = require('../controller/students.js');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/totalNumber', (req, res) => {
+  controller.getTotalNumber(req, res)
+});
+
+router.get('/search', (req, res) => {
   controller.getStudentInfo(req, res)
 });
 

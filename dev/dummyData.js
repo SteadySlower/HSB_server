@@ -1,7 +1,4 @@
 const { pool } = require('../config/database.js')
-const studentDao = require('../dao/students')
-
-
 
 // id 만들어주는 함수
 
@@ -29,7 +26,6 @@ async function insertStudent(connection, student) {
     );
     return insertDealRow;
 };
-
 
 function createRandomName() {
     const lastNames = ["김", "이", "박", "최", "윤", "문", "성", "설", "정", "구", "양", "민", "고", "홍", "장", "강"]
