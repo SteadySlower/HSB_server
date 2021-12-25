@@ -1,5 +1,6 @@
 const express = require('express');
 const studentRouter = require('./routes/student.js');
+const guidanceRouter = require('./routes/guidance.js');
 
 const app = express();
 
@@ -7,6 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/students', studentRouter);
+app.use('/guidances', guidanceRouter);
 
 app.use((req, res, next) => {
     res.status(404).send('Not Found');
