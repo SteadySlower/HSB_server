@@ -12,11 +12,11 @@ const { response, errResponse } = require('../config/responseFormat.js');
 
  exports.postGuidance = async function (req, res) {
 
-    const { studentID, reason, detail } = req.body;
+    const { studentID, reason, detail, date } = req.body;
 
     // TODO: body 검증하기!
 
-    const result = await guidanceService.createGuidance(studentID, reason, detail);
+    const result = await guidanceService.createGuidance(studentID, reason, detail, date);
 
     return res.send(response(responses.SUCCESS, result));
 

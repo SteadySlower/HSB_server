@@ -4,9 +4,9 @@ const guidanceDao = require('../dao/guidance.js');
 
 
 // 생활지도 등록하기
-exports.createGuidance = async function (studentID, reason, detail) {
+exports.createGuidance = async function (studentID, reason, detail, date) {
     const connection = await pool.promise().getConnection(async (conn) => conn);
-    const params = [ studentID, reason, detail ];
+    const params = [ studentID, reason, detail, date ];
     const insertResult = await guidanceDao.insertGuidance(connection, params);
     const guidanceID = insertResult[0].insertId
     console.log(`추가된 생활지도 : ${guidanceID}`)

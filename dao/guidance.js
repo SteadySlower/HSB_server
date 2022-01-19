@@ -1,8 +1,8 @@
 // guidance 추가
 exports.insertGuidance = async function (connection, params) {
     const query = `
-        INSERT INTO Guidance(studentID, reason, detail)
-        VALUES (?, ?, ?);
+        INSERT INTO Guidance(studentID, reason, detail, date)
+        VALUES (?, ?, ?, ?);
     `;
     const row = await connection.query(query, params);
     return row;
@@ -41,10 +41,12 @@ exports.selectAllGuidances = async function (connection) {
             S.profileImageURL AS profileImageURL,
             G.id AS guidanceID,
             G.reason AS reason,
-            G.detail AS detail
+            G.detail AS detail,
+            G.date AS date,
+            G.status AS status
         FROM HSB.Guidance G
         INNER JOIN HSB.Student S ON G.studentID = S.id
-        WHERE G.status = 'VALID';
+        WHERE G.status = 'VALID' OR 'DELAYED';
     `;
     const row = await connection.query(query);
     return row;
