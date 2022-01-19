@@ -7,4 +7,12 @@ router.post('/', (req, res) => {
     controller.postGuidance(req, res)
 });
 
+router.get('/', (req, res) => {
+    controller.getGuidances(req, res)
+});
+
+router.delete('/:guidanceID', (req, res) => {
+    controller.deleteGuidance(req, res)
+});
+
 module.exports = router;
