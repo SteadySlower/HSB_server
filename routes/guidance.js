@@ -15,11 +15,11 @@ router.delete('/:guidanceID', (req, res) => {
     controller.deleteGuidance(req, res)
 });
 
-router.put('/completion', (req, res) => {
+router.patch('/completion', (req, res) => {
     controller.completeGuidance(req, res)
 });
 
-router.put('/delay', (req, res) => {
+router.patch('/delay', (req, res) => {
     controller.delayGuidance(req, res)
 });
 
