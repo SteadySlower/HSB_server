@@ -19,4 +19,8 @@ router.put('/completion', (req, res) => {
     controller.completeGuidance(req, res)
 });
 
+router.put('/delay', (req, res) => {
+    controller.delayGuidance(req, res)
+});
+
 module.exports = router;

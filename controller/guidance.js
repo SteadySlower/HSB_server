@@ -80,3 +80,23 @@ const { response, errResponse } = require('../config/responseFormat.js');
 
 };
 
+/**
+ * API No. 7
+ * API Name : 생활지도 연기 API
+ * [PUT] /guidances/delay
+ */
+
+ exports.delayGuidance = async function (req, res) {
+
+    /**
+     * Body : guidanceID, date
+     */
+
+     const { guidanceID, date } = req.body;
+
+    const result = await guidanceService.delayGuidance(guidanceID, date);
+
+    return res.send(response(responses.SUCCESS, result));
+
+};
+

@@ -76,3 +76,15 @@ exports.updateGuidanceStatusToComplete = async function (connection, guidanceID)
     return row;
 };
 
+// guidance 연기 처리
+exports.updateGuidanceDate = async function (connection, params) {
+    const query = `
+        UPDATE HSB.Guidance
+        SET
+            status = "DELAYED",
+            date = ?
+        WHERE id = ?;
+    `;
+    const row = await connection.query(query, guidanceID);
+    return row;
+};

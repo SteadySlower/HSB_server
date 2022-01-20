@@ -50,3 +50,21 @@ exports.removeGuidance = async function (guidanceID) {
 
     return newData;
 };
+
+// 생활지도 연기 처리
+exports.delayGuidance = async function (guidanceID, date) {
+
+    //TODO: DB에 있는 guidanceID가 VALID한 데이터인지 확인
+
+    const connection = await pool.promise().getConnection(async (conn) => conn);
+    const params = [ date, guidanceID ];
+    const result = await guidanceDao.updateGuidanceDate(connection, params);
+
+    console.log(`연기된 생활지도 : ${guidanceID}`)
+
+    connection.release();
+
+    const newData = await guidanceProvider.getAllGuidances();
+
+    return newData;
+};
