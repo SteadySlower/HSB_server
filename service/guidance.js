@@ -35,7 +35,7 @@ exports.removeGuidance = async function (guidanceID) {
 };
 
 // 생활지도 완료 처리
-exports.removeGuidance = async function (guidanceID) {
+exports.completeGuidance = async function (guidanceID) {
 
     //TODO: DB에 있는 guidanceID가 VALID한 데이터인지 확인
 

@@ -85,6 +85,6 @@ exports.updateGuidanceDate = async function (connection, params) {
             date = ?
         WHERE id = ?;
     `;
-    const row = await connection.query(query, guidanceID);
+    const row = await connection.query(query, params);
     return row;
 };
