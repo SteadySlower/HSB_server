@@ -15,4 +15,8 @@ router.delete('/:guidanceID', (req, res) => {
     controller.deleteGuidance(req, res)
 });
 
+router.put('/completion', (req, res) => {
+    controller.completeGuidance(req, res)
+});
+
 module.exports = router;

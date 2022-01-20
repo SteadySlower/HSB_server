@@ -33,3 +33,20 @@ exports.removeGuidance = async function (guidanceID) {
 
     return newData;
 };
+
+// 생활지도 완료 처리
+exports.removeGuidance = async function (guidanceID) {
+
+    //TODO: DB에 있는 guidanceID가 VALID한 데이터인지 확인
+
+    const connection = await pool.promise().getConnection(async (conn) => conn);
+    const result = await guidanceDao.updateGuidanceStatusToComplete(connection, guidanceID);
+
+    console.log(`완료된 생활지도 : ${guidanceID}`)
+
+    connection.release();
+
+    const newData = await guidanceProvider.getAllGuidances();
+
+    return newData;
+};

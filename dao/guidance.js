@@ -20,7 +20,9 @@ exports.selectGuidance = async function (connection, guidanceID) {
             S.profileImageURL AS profileImageURL,
             G.id AS guidanceID,
             G.reason AS reason,
-            G.detail AS detail
+            G.detail AS detail,
+            G.date AS date,
+            G.status AS status
         FROM HSB.Guidance G
         INNER JOIN HSB.Student S ON G.studentID = S.id
         WHERE G.id = ?;
@@ -57,6 +59,17 @@ exports.deleteGuidance = async function (connection, guidanceID) {
     const query = `
         UPDATE HSB.Guidance
         SET status = "DELETE"
+        WHERE id = ?;
+    `;
+    const row = await connection.query(query, guidanceID);
+    return row;
+};
+
+// guidance 완료 처리
+exports.updateGuidanceStatusToComplete = async function (connection, guidanceID) {
+    const query = `
+        UPDATE HSB.Guidance
+        SET status = "COMPLETE"
         WHERE id = ?;
     `;
     const row = await connection.query(query, guidanceID);

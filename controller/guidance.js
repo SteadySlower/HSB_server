@@ -12,6 +12,10 @@ const { response, errResponse } = require('../config/responseFormat.js');
 
  exports.postGuidance = async function (req, res) {
 
+    /**
+     * Body : studentID, reason, detail, date
+     */
+
     const { studentID, reason, detail, date } = req.body;
 
     // TODO: body 검증하기!
@@ -55,3 +59,24 @@ const { response, errResponse } = require('../config/responseFormat.js');
     return res.send(response(responses.SUCCESS, result));
 
 };
+
+/**
+ * API No. 6
+ * API Name : 생활지도 완료 API
+ * [PUT] /guidances/completion
+ */
+
+ exports.completeGuidance = async function (req, res) {
+
+    /**
+     * Body : guidanceID
+     */
+
+     const { guidanceID } = req.body;
+
+    const result = await guidanceService.completeGuidance(guidanceID);
+
+    return res.send(response(responses.SUCCESS, result));
+
+};
+
