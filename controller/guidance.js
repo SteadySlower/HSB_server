@@ -63,7 +63,7 @@ const { response, errResponse } = require('../config/responseFormat.js');
 /**
  * API No. 6
  * API Name : 생활지도 완료 API
- * [PUT] /guidances/completion
+ * [PATCH] /guidances/completion
  */
 
  exports.completeGuidance = async function (req, res) {
@@ -83,7 +83,7 @@ const { response, errResponse } = require('../config/responseFormat.js');
 /**
  * API No. 7
  * API Name : 생활지도 연기 API
- * [PUT] /guidances/delay
+ * [PATCH] /guidances/delay
  */
 
  exports.delayGuidance = async function (req, res) {

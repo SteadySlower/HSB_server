@@ -48,7 +48,7 @@ exports.selectAllGuidances = async function (connection) {
             G.status AS status
         FROM HSB.Guidance G
         INNER JOIN HSB.Student S ON G.studentID = S.id
-        WHERE G.status = 'VALID' OR 'DELAYED';
+        WHERE G.status = 'VALID' OR G.status = 'DELAYED';
     `;
     const row = await connection.query(query);
     return row;
