@@ -4,6 +4,10 @@
 
 학생부 교사를 중심으로 학생들의 생활교육을 전교사가 공유하기 위한 앱입니다.
 
+교문에서 학생부 교사가 학생들의 생활지도 위반사항을 저장하고 담임교사가 위반 학생들의 명단을 확인할 수 있습니다.  
+
+그리고 봉사담당 교사는 명단을 보고 봉사활동을 지도할 수 있습니다.  
+
 이 프로젝트에 대한 자세한 내용은 아래 블로그에서 보실 수 있습니다. 
 
 👉 [개발 과정 자세히 보기](https://velog.io/@comdongsam/series/%ED%95%99%EC%83%9D%EB%B6%80-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0)
@@ -51,13 +55,14 @@
 
 # 사용한 기술 🛠
 ## 클라이언트 (iOS)
-- Swift, UIKit
-- StoryBoard 없이 순수 코드로 UI 구현
+- Swift
+- UIKit (StoryBoard 없이 순수 코드로 UI 구현)
 - MVVM, Singleton, Delegate
 - Swift Package Manager, Alamofire, Kingfisher
 - Xcode, iOS simulator
 ## 서버 (nodejs)
-- javascript, expressjs, npm, mysql2, pm2
+- Javascript
+- Expressjs, npm, mysql2, pm2
 - MySQL
 - Visual Studio Code, Postman, MySQL WorkBench
 ## 공통
@@ -228,8 +233,3 @@
 
 7. [PATCH] 생활지도 연기 처리
 ![](./readme_img/7.png)
-
-
-# Trouble Shooting 아카이브 🤔
-
-
