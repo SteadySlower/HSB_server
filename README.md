@@ -16,7 +16,7 @@
 
 👉 [클라이언트(iOS) 코드 보러가기](https://github.com/SteadySlower/HSB)
 
-✋ 본서버는 위 iOS 앱을 위해 최소한만 구현된 서버입니다. 에러 처리 및 validation이 생략되어 있습니다.
+✋ 본 서버는 위 iOS 앱을 위해 최소한만 구현된 서버입니다. 에러 처리 및 validation이 생략되어 있습니다.
 
 # API 설계 ⚙️
 1. [GET] 학교의 학년별 반 갯수, 반별 학생수 조회
@@ -56,7 +56,7 @@
 # 사용한 기술 🛠
 ## 클라이언트 (iOS)
 - Swift
-- UIKit (StoryBoard 없이 순수 코드로 UI 구현)
+- Code-based UI (UIKit)
 - MVVM, Singleton, Delegate
 - Swift Package Manager, Alamofire, Kingfisher
 - Xcode, iOS simulator
